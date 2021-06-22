@@ -63,100 +63,23 @@ Mar 2020:   335 seqs (   16.7500 pt);        436 total (   21.8000 pt);
 Apr 2020:  1546 seqs (   77.3000 pt);       1982 total (   99.1000 pt);
 May 2020:  2994 seqs (  149.7000 pt);       4976 total (  248.8000 pt);
 Jun 2020:  3416 seqs (  170.8000 pt);       8392 total (  419.6000 pt);
-<[talk_bosc_vadr_apr2021]> perl sum-and-ai-large.pl count-large.txt 
-Jan 2020:    33 seqs (    0.0825 pt);         33 total (    0.0825 pt);
-Feb 2020:    68 seqs (    0.1700 pt);        101 total (    0.2525 pt);
-Mar 2020:   335 seqs (    0.8375 pt);        436 total (    1.0900 pt);
-Apr 2020:  1546 seqs (    3.8650 pt);       1982 total (    4.9550 pt);
-May 2020:  2994 seqs (    7.4850 pt);       4976 total (   12.4400 pt);
-Jun 2020:  3416 seqs (    8.5400 pt);       8392 total (   20.9800 pt);
-Jul 2020:  4779 seqs (   11.9475 pt);      13171 total (   32.9275 pt);
-Aug 2020:  4505 seqs (   11.2625 pt);      17676 total (   44.1900 pt);
-Sep 2020:  7529 seqs (   18.8225 pt);      25205 total (   63.0125 pt);
-Oct 2020: 12470 seqs (   31.1750 pt);      37675 total (   94.1875 pt);
-Nov 2020:  4834 seqs (   12.0850 pt);      42509 total (  106.2725 pt);
-Dec 2020:  4687 seqs (   11.7175 pt);      47196 total (  117.9900 pt);
-Jan 2021: 10471 seqs (   26.1775 pt);      57667 total (  144.1675 pt);
-Feb 2021: 26462 seqs (   66.1550 pt);      84129 total (  210.3225 pt);
-Mar 2021: 44936 seqs (  112.3400 pt);     129065 total (  322.6625 pt);
-Apr 2021: 77612 seqs (  194.0300 pt);     206677 total (  516.6925 pt);
+<[talk_staphb_vadr_june2021]> perl sum-and-ai-large.pl count-large.txt
+Jan 2020:     33 seqs (    0.0825 pt);         33 total (    0.0825 pt);
+Feb 2020:     68 seqs (    0.1700 pt);        101 total (    0.2525 pt);
+Mar 2020:    335 seqs (    0.8375 pt);        436 total (    1.0900 pt);
+Apr 2020:   1546 seqs (    3.8650 pt);       1982 total (    4.9550 pt);
+May 2020:   2994 seqs (    7.4850 pt);       4976 total (   12.4400 pt);
+Jun 2020:   3416 seqs (    8.5400 pt);       8392 total (   20.9800 pt);
+Jul 2020:   4779 seqs (   11.9475 pt);      13171 total (   32.9275 pt);
+Aug 2020:   4505 seqs (   11.2625 pt);      17676 total (   44.1900 pt);
+Sep 2020:   7529 seqs (   18.8225 pt);      25205 total (   63.0125 pt);
+Oct 2020:  12470 seqs (   31.1750 pt);      37675 total (   94.1875 pt);
+Nov 2020:   4834 seqs (   12.0850 pt);      42509 total (  106.2725 pt);
+Dec 2020:   4687 seqs (   11.7175 pt);      47196 total (  117.9900 pt);
+Jan 2021:  10471 seqs (   26.1775 pt);      57667 total (  144.1675 pt);
+Feb 2021:  26462 seqs (   66.1550 pt);      84129 total (  210.3225 pt);
+Mar 2021:  44936 seqs (  112.3400 pt);     129065 total (  322.6625 pt);
+Apr 2021: 213708 seqs (  534.2700 pt);     342773 total (  856.9325 pt);
+May 2021: 218994 seqs (  547.4850 pt);     561767 total ( 1404.4175 pt);
+Jun 2021: 164203 seqs (  410.5075 pt);     725970 total ( 1814.9250 pt);
 
-
-Important dates:
-May  7, 2020 vadr 1.1   (-s -r)
-Jul 22, 2020 vadr 1.1.1 (feature trimming due to Ns)
-Jan  8, 2021 B.1.117 model
-OMIT Nov 20, 2020, vadr 1.1.2 (cox1 --mlist, --msub, etc.)
-Feb 12, 2021 vadr 1.1.3 (misc_not_failure)
-Apr 12, 2021 vadr 1.2 + B.1.525 model (--split --cpu --glsearch)
-
-Models:
-1.2-2:   B.1.525 model (Apr 12, 2021)
-1.1.3-1: support for misc_featurization del28254 model (extended orf8)
-1.1.2-1: B.1.117 model MW422255 (Jan 8, 2021)
-
-Speeds:
-vadr 1.0:
-speed per seq: 300sec/seq
-typical/max required memory: 64G RAM
-
-5K seqs = 25K minutes = ~420h =~ 2.5 weeks on 1 CPU
-
-vadr 1.1:
-speed per few-error  seqs:  ~2sec/seq (150X speed-up)
-speed per many-error seqs: ~60sec/seq   (5X speed-up)
-typical memory:      ~2G RAM
-max required memory: 64G RAM
-
-5K seqs = 10K secs =~ 3h; if 50 are error-prone, about 4h
-100K seqs = 20*4h = 80h =~ 4 days
-
-
-vadr 1.2:
-speed per few-error  seqs: 0.3sec/seq (8 threads,  7X speed-up, ~1000X total speedup
-speed per many-error seqs: 1.0sec/seq (8 threads, 60X speed-up)  ~300X total speedup
-max memory:   2G RAM per thread
-
-100K seqs = 90K * 0.3 sec = 27000 + 10K * 1sec = 10000 = 37000 =~ 12h
-I'll write 10h
-
-
-
-
-From
-$INF/notebook/20_0423_vadr_replace_foosh_scrum_update/presented/vadr-r-options.20200423-1.txt
-
-vadr mode|  testset     | total time     | per sequence time
----------|  ----------- | -------------- | -------------------
-default  |  903-testset | 4515 min total | 5 min/seq
--r       |  903-testset | 4515 min total | 5 min/seq
--s       |  903-testset |   23 min total | 1.5 sec/seq
--s -r    |  903-testset |   24 min total | 1.6 sec/seq
-
-default  |  301-testset | 1505 min total |  5 min/seq
--r       |  301-testset | 1505 min total |  5 min/seq
--s       |  301-testset |  140 min total | 28 sec/seq
--s -r    |  301-testset |    9 min total | 1.8 sec/seq ****
-
-default  | 1204-testset | 6020 min total | 5 min/seq
--r       | 1204-testset | 6020 min total | 5 min/seq
--s       | 1204-testset |  163 min total | 8 sec/seq
--s -r    | 1204-testset |   33 min total | 1.7 sec/seq
-
-From FP-424:
-
-dataset 	version 	num threads 	seconds/seq
-typical 	1.1.3 	1 	4.2
-typical 	1.2dev4 	1 	2.5
-typical 	1.2dev4 	4 	0.8
-  	  	  	 
-bad 	1.1.3 	1 	~60
-bad 	1.2dev4 	1 	4.9
-bad 	1.2dev4 	4 	1.5
-
-dataset 	version 	num threads 	seconds/seq 	max memory
-typical 	1.2dev4 	1 	2.2 	109.4Mb
-typical 	1.2dev4 	2 	1.2 	164.9Mb
-typical 	1.2dev4 	4 	0.6 	261.7Mb
-typical 	1.2dev4 	8 	0.3 	485.7Mb
-typical 	1.2dev4 	16 	0.2 	993.5Mb 
